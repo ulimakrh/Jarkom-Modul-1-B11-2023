@@ -8,17 +8,24 @@
 ## Soal 1
 User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
 
-a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? 258040667
+a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? `258040667`
 
-b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? 1044861039
+b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? `1044861039`
 
-c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? 1044861039
+c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? `1044861039`
 
-d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? 258040696
+d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut? `258040696`
 
 ## Jawaban Soal 1
-Pertama, dilakukan filter `tcp contains “STOR”` karena STOR adalah command untuk mengunggah file. Hal itu kita lakukan untuk mendapatkan nama file .zip yaitu `c75-GrabThePhisher.zip`.
+Pertama, pada poin a dan b diminta menunjukkan raw number pada packet "mengunggah file" sehingga dilakukan filter `tcp contains “STOR”` karena STOR adalah command untuk mengunggah file. 
 ![Screenshot 2023-09-18 191938](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/a3137b20-466d-41eb-970d-6861a98f6c34)
+
+Dari situ, kita mendapatkan nama file .zip dari packet response yaitu `c75-GrabThePhisher.zip` yang bisa kita gunakan untuk filtering soal c dan d.
+![WhatsApp Image 2023-09-22 at 18 09 58](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/2746a512-4751-4d62-abd2-0909c1f217b3)
+
+Di bagian bawah akan muncul sequence dan acknowledge raw number dari soal a-d seperti berikut.
+![WhatsApp Image 2023-09-22 at 18 13 50](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/9ea95dce-23e2-4c35-aa0e-1ac5fd3dc08c)
+
 
 ## Soal 6
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
