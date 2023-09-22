@@ -89,3 +89,32 @@ Jika dilihat dari huruf kapital yang disediakan di soal, kita mendapatkan sebuah
 
 Setelah mendapatkan IP , kita mendapatkan sebuah clue cipher dimana apabila a menjadi 1, e menjadi 5, dan u menjadi 21. Dari clue kedua tersebut. Kita dapat memecah IP **104.18.14.101** menjadi 10 4 18 14 10 dan 1 (karena alphabet hanya mencapai bilangan 26 (Z)). Sehingga apabila ditranslate akan menjadi **JDRNJA**.
 
+## Soal 7
+Berapa jumlah packet yang menuju IP 184.87.193.88?
+
+## Jawaban Soal 7
+Dilakukan filter dengan `ip.dst == 184.87.193.88` dan didapatkan packet sejumlah 6.
+![WhatsApp Image 2023-09-18 at 20 31 42](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/b7f6a081-9797-4a08-80c8-73c2c13bf096)
+
+## Soal 8
+Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
+
+## Jawaban Soal 8
+Query filter yang digunakan adalah `tcp.dstport == 80 || udp.dstport == 80` 
+![WhatsApp Image 2023-09-18 at 20 32 10](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/881ea37f-b6e2-4e7f-bb28-9958c376b490)
+
+## Soal 9
+Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+
+## Jawaban Soal 9
+Query filter yang digunakan adalah ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 
+
+## Soal 10
+Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
+
+## Jawaban Soal 10
+Dilakukan filter menggunakan `telnet contains "Login"`
+![WhatsApp Image 2023-09-18 at 21 03 38](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/c9bf3382-6406-40a8-909c-00491287a1b9)
+
+Lalu follow TCP Stream dan didapatkan password = kesayangannyak0k0, dan username = dhafin (ambil character yang merah).
+![WhatsApp Image 2023-09-18 at 21 04 20](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/7e9dd6ae-3758-487b-b020-e9dcf5301b2d)
