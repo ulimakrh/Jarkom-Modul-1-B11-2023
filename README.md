@@ -26,6 +26,24 @@ Dari situ, kita mendapatkan nama file .zip dari packet response yaitu `c75-GrabT
 Di bagian bawah akan muncul sequence dan acknowledge raw number dari soal a-d seperti berikut.
 ![WhatsApp Image 2023-09-22 at 18 13 50](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/9ea95dce-23e2-4c35-aa0e-1ac5fd3dc08c)
 
+## Soal 2
+Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+
+## Jawaban Soal 2
+Pertama, dilakukan filter menggunakan `http contains “10.21.78.111:8000”` yang merupakan alamat dari platform praktikum Jarkom.
+Lalu dilakukan TCP Stream sehingga didapatkan nama web server yang digunakan yaitu Gunicorn.
+![WhatsApp Image 2023-09-22 at 18 10 00](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/5ada35c2-192b-4c6e-b533-10f80ae1e330)
+
+## Soal 3
+Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
+a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702? `21`
+
+b. Protokol layer transport apa yang digunakan? `UDP`
+
+## Jawaban Soal 3
+Dilakukan filter menggunakan `ip.addr == 239.255.255.250 && udp.port == 3702` untuk mendapatkan jumlah packet tercapture yang berjumlah 21.
+Dari situ juga dapat dilihat bahwa protocol yang digunakan adalah UDP.
+![WhatsApp Image 2023-09-22 at 18 09 59](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/e5705783-af2d-49bc-8483-be4d25cc9c96)
 
 ## Soal 6
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
