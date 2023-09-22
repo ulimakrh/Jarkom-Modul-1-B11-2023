@@ -48,7 +48,7 @@ Dari situ juga dapat dilihat bahwa protocol yang digunakan adalah UDP.
 ## Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130? `0x18e5`
 
-##Jawaban Soal 4
+## Jawaban Soal 4
 Dicari paket dengan nomor 130 dan dapat terlihat nilai checksumnya adalah 0x18e5.
 ![WhatsApp Image 2023-09-22 at 18 09 59](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/c4099048-21c7-473d-b777-ec8e6cfc48dc)
 
@@ -65,7 +65,8 @@ Open TCP stream dari pcap soal 5.
 Lalu, scroll ke bawah dan ditemukan sebuah password untuk membuka zip folder.
 ![WhatsApp Image 2023-09-18 at 21 10 26](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/49fe6c56-b473-4a6c-a967-4d470f9a1275)
 
-Decode password tersebut menggunakan base64 menjadi 5implePas5word. Setelah itu buka folder connection.txt dan lakukan nc pada nc 10.21.78.111 11111.
+Decode password tersebut menggunakan base64 menjadi 5implePas5word. Setelah itu buka folder connection.txt dan lakukan nc pada nc 10.21.78.111 11111
+
 ![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/2b5eae31-d957-416b-9c8f-8c9c4481415a)
 
 Lalu untuk menjawab poin A lakukan filter tcp || udp untuk mendapatkan total paket yang diterima.
@@ -78,7 +79,7 @@ Lalu untuk poin C gunakan statistics, pilih Endpoints dan pilih IPv4. Maka ditem
 ![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/1d413227-15d4-47a9-8f2a-ff2ad0b808ce)
 
 Karena baris pertama (10) merupakan private ip, dan 192 adalah private ip (untuk kebanyakan). Maka jawabannya adalah 74.
-![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/957c5193-8fc7-4969-940e-e40178d38ff6)
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/4a1045cb-6ac0-4aa0-97fe-f5dc07bf6c23)
 
 ## Soal 6
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
@@ -90,7 +91,7 @@ Jika dilihat dari huruf kapital yang disediakan di soal, kita mendapatkan sebuah
 Setelah mendapatkan IP , kita mendapatkan sebuah clue cipher dimana apabila a menjadi 1, e menjadi 5, dan u menjadi 21. Dari clue kedua tersebut. Kita dapat memecah IP **104.18.14.101** menjadi 10 4 18 14 10 dan 1 (karena alphabet hanya mencapai bilangan 26 (Z)). Sehingga apabila ditranslate akan menjadi **JDRNJA**.
 
 ## Soal 7
-Berapa jumlah packet yang menuju IP 184.87.193.88?
+Berapa jumlah packet yang menuju IP 184.87.193.88? `6`
 
 ## Jawaban Soal 7
 Dilakukan filter dengan `ip.dst == 184.87.193.88` dan didapatkan packet sejumlah 6.
@@ -107,7 +108,7 @@ Query filter yang digunakan adalah `tcp.dstport == 80 || udp.dstport == 80`
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
 
 ## Jawaban Soal 9
-Query filter yang digunakan adalah ip.src == 10.51.40.1 && ip.dst != 10.39.55.34 
+Query filter yang digunakan adalah `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`
 
 ## Soal 10
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
