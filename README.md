@@ -27,7 +27,7 @@ Di bagian bawah akan muncul sequence dan acknowledge raw number dari soal a-d se
 ![WhatsApp Image 2023-09-22 at 18 13 50](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/9ea95dce-23e2-4c35-aa0e-1ac5fd3dc08c)
 
 ## Soal 2
-Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
+Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer! `gunicorn`
 
 ## Jawaban Soal 2
 Pertama, dilakukan filter menggunakan `http contains “10.21.78.111:8000”` yang merupakan alamat dari platform praktikum Jarkom.
@@ -44,6 +44,41 @@ b. Protokol layer transport apa yang digunakan? `UDP`
 Dilakukan filter menggunakan `ip.addr == 239.255.255.250 && udp.port == 3702` untuk mendapatkan jumlah packet tercapture yang berjumlah 21.
 Dari situ juga dapat dilihat bahwa protocol yang digunakan adalah UDP.
 ![WhatsApp Image 2023-09-22 at 18 09 59](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/e5705783-af2d-49bc-8483-be4d25cc9c96)
+
+## Soal 4
+Berapa nilai checksum yang didapat dari header pada paket nomor 130? `0x18e5`
+
+##Jawaban Soal 4
+Dicari paket dengan nomor 130 dan dapat terlihat nilai checksumnya adalah 0x18e5.
+![WhatsApp Image 2023-09-22 at 18 09 59](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/c4099048-21c7-473d-b777-ec8e6cfc48dc)
+
+## Soal 5
+Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
+a. Berapa banyak packet yang berhasil di capture dari file pcap tersebut?
+
+b. Port berapakah pada server yang digunakan untuk service SMTP?
+
+c. Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?
+
+## Jawaban Soal 5
+Open TCP stream dari pcap soal 5.
+Lalu, scroll ke bawah dan ditemukan sebuah password untuk membuka zip folder.
+![WhatsApp Image 2023-09-18 at 21 10 26](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/49fe6c56-b473-4a6c-a967-4d470f9a1275)
+
+Decode password tersebut menggunakan base64 menjadi 5implePas5word. Setelah itu buka folder connection.txt dan lakukan nc pada nc 10.21.78.111 11111.
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/2b5eae31-d957-416b-9c8f-8c9c4481415a)
+
+Lalu untuk menjawab poin A lakukan filter tcp || udp untuk mendapatkan total paket yang diterima.
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/d046b576-a24c-43a1-9873-cad0844b094e)
+
+Untuk menjawab poin B lakukan filter smtp dan kemudian cek di salah satu packet pada src port (didapatkan port 25).
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/8c334935-4eae-495c-8d6c-990e07cc1a44)
+
+Lalu untuk poin C gunakan statistics, pilih Endpoints dan pilih IPv4. Maka ditemukan 
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/1d413227-15d4-47a9-8f2a-ff2ad0b808ce)
+
+Karena baris pertama (10) merupakan private ip, dan 192 adalah private ip (untuk kebanyakan). Maka jawabannya adalah 74.
+![image](https://github.com/ulimakrh/Jarkom-Modul-1-B11-2023/assets/114993076/957c5193-8fc7-4969-940e-e40178d38ff6)
 
 ## Soal 6
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
